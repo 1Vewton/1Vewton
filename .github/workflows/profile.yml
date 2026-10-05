@@ -7,7 +7,8 @@ on:
   # (optional) Run workflow when pushing on master/main
   push: {branches: ["master", "main"]}
 jobs:
-  github-metrics:
+  # profile: jobs for getting profile
+  profile:
     runs-on: ubuntu-latest
     environment: 
       name: production
@@ -31,3 +32,55 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_isocalendar: yes
+  # language: job for getting language
+  language:
+    runs-on: ubuntu-latest
+    environment: 
+      name: production
+    permissions:
+      contents: write
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.METRICS_TOKEN }}
+      - name: Set Profile Image
+        uses: lowlighter/metrics@latest
+        with:
+          filename: profile.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: header, repositories
+          plugin_lines: yes
+      - name: Half-year calendar
+        uses: lowlighter/metrics@latest
+        with:
+          filename: calender.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_isocalendar: yes
+      - name: Indepth analysis
+        uses: lowlighter/metrics@latest
+        with:
+          filename: language_all.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, percentage
+          plugin_languages_limit: 6
+      - name: Recent Data
+        uses: lowlighter/metrics@latest
+        with:
+          filename: language_recent.svg
+          token: ${{ secrets.METRICS_TOKEN }}
+          base: ""
+          plugin_languages_sections: recently-used
+          plugin_languages: yes
+          plugin_languages_ignored: >-
+            html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
+            gnuplot
+          plugin_languages_indepth: yes
+          plugin_languages_details: lines, percentage
+          plugin_languages_limit: 6
