@@ -2,7 +2,7 @@
 
 Welcome to my profile! 🥰
 
-<table border="1">
+<table>
     <tr>
         <td>
             <p align="center">Basic Information</p>
@@ -14,12 +14,12 @@ Welcome to my profile! 🥰
     <tr>
         <td>
             <p align="center">
-                <img src="./profile.svg" alt="logo" width="300">
+                <img src="./profile.svg" alt="profile">
             </p>
         </td>
         <td>
             <p align="center">
-                <img src="./calender.svg" alt="calender" width="300">
+                <img src="./calender.svg" alt="calender">
             </p>
         </td>
     </tr>
