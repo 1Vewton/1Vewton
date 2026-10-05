@@ -15,8 +15,6 @@ jobs:
     permissions:
       contents: write
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Set Profile Image
         uses: lowlighter/metrics@latest
         with:
@@ -31,8 +29,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_isocalendar: yes
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Indepth analysis
         uses: lowlighter/metrics@latest
         with:
@@ -43,7 +39,6 @@ jobs:
           plugin_languages_ignored: >-
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
             gnuplot
-          plugin_languages_indepth: yes
           plugin_languages_details: lines, percentage
           plugin_languages_limit: 6
       - name: Recent Data
@@ -57,6 +52,5 @@ jobs:
           plugin_languages_ignored: >-
             html, css, tex, less, dockerfile, makefile, qmake, lex, cmake, shell,
             gnuplot
-          plugin_languages_indepth: yes
           plugin_languages_details: lines, percentage
           plugin_languages_limit: 6
