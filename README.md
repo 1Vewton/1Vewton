@@ -4,7 +4,9 @@ Welcome to my profile! 🥰
 
 ## Basic Information
 
-![info](profile.svg#pic_center)
+<p align="center">
+  <img src="./profile.svg" alt="logo" width="300">
+</p>
 
 ## Languages I Use
 
