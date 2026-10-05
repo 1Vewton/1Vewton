@@ -23,4 +23,24 @@ Welcome to my profile! 🥰
             </p>
         </td>
     </tr>
+    <tr>
+        <td>
+            <p align="center">Language Used All Time</p>
+        </td>
+        <td>
+            <p align="center">Language Used Recently</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p align="center">
+                <img src="./language_all.svg" alt="profile">
+            </p>
+        </td>
+        <td>
+            <p align="center">
+                <img src="./language_recent.svg" alt="calender">
+            </p>
+        </td>
+    </tr>
 </table>
