@@ -31,14 +31,6 @@ jobs:
           token: ${{ secrets.METRICS_TOKEN }}
           base: ""
           plugin_isocalendar: yes
-  # language: job for getting language
-  language:
-    runs-on: ubuntu-latest
-    environment: 
-      name: production
-    permissions:
-      contents: write
-    steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Indepth analysis
