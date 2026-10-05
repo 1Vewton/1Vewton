@@ -15,6 +15,8 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout repository
+          uses: actions/checkout@v4
       - name: Set Profile Image
         uses: lowlighter/metrics@latest
         with:
@@ -37,6 +39,8 @@ jobs:
     permissions:
       contents: write
     steps:
+      - name: Checkout repository
+          uses: actions/checkout@v4
       - name: Indepth analysis
         uses: lowlighter/metrics@latest
         with:
